@@ -1,12 +1,30 @@
 import {TimelineEvent} from "~/types/ITicketJSON";
 import {For} from "solid-js"
 
+function getDaySuffix(day: number): string {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+        case 1:  return "st";
+        case 2:  return "nd";
+        case 3:  return "rd";
+        default: return "th";
+    }
+}
+
 export function TimeLineComponent(pros: TimelineEvent[]) {
     return (<ul class="timeline timeline-vertical"><For each={pros}>
         {(item, index) => (
             <li>
                 <div class
-                         ="timeline-start">{new Date(item.timestamp).toLocaleTimeString()}
+                         ="timeline-start">{new Date(item.timestamp).toLocaleString('en-US', {
+                            hour12: false,
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: '2-digit'
+                        }).replace(/(\d+)(?=(,|\s))/, (match) => `${match}${getDaySuffix(Number(match))}`)}
                 </div>
                 <div class
                          ="timeline-middle">

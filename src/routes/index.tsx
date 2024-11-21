@@ -10,7 +10,7 @@ export default function Home() {
   const [state, setState] = createStore({
     jsonData: null as Ticket | null,
     loading: false,
-    message: '请拖入 JSON 文件或在 URL 添加 JSON 的 URL。',
+    message: 'Upload JSON file or drag and drop JSON file here.',
   })
 
   onMount(() => {
@@ -39,7 +39,7 @@ export default function Home() {
       console.error('Failed to fetch JSON:', error)
       setState({
         loading: false,
-        message: `加载 JSON 数据失败，请检查 URL${url} 是否正确。`,
+        message: `Failed to fetch JSON, please check the URL: ${url}`,
       })
     }
   }
@@ -58,7 +58,7 @@ export default function Home() {
       }
       reader.readAsText(file)
     } else {
-      alert('请拖入一个有效的 JSON 文件。')
+      alert('Drag a valid JSON file.')
     }
   }
 
@@ -99,7 +99,7 @@ export default function Home() {
               'align-items': 'center',
             }}
           >
-            加载中，请稍候...
+            Loading...
           </div>
         </Portal>
       </Show>
@@ -138,7 +138,7 @@ export default function Home() {
                   participants={conversation.participants}
                 />
                 <div id='content' class='divider divider-accent'>
-                  聊天内容
+                  Chat History
                 </div>
                 <ChatComponent {...conversation} />
               </pre>

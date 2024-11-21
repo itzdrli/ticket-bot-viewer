@@ -25,6 +25,8 @@
   "dependencies": {
     "daisyui": "^4.7.3",
     "prettier": "^3.2.5",
-    "theme-change": "^2.5.0"
-  }
+    "theme-change": "^2.5.0",
+    "vinxi": "^0.4.3"
+  },
+  "packageManager": "yarn@4.5.1"
 }

@@ -13,7 +13,7 @@ function TextMessage({ content }: { content: TextContent }) {
 }
 
 function ImageMessage({ content }: { content: ImageContent }) {
-  return <img width='256' alt='图片' src={content.url} />
+  return <img width='256' alt='Img' src={content.url} />
 }
 
 function FileMessage({ content }: { content: FileContent }) {
@@ -63,17 +63,17 @@ export function MessageBubble({
     <div class='chat chat-start'>
       <div class='chat-image avatar'>
         <div class='w-10 rounded-full'>
-          <img alt='头像' src={userInfo.avatarUrl} />
+          <img alt='Avatar' src={userInfo.avatarUrl} />
         </div>
       </div>
       <div class='chat-header'>
-        {userInfo.name}
+        {userInfo.name + " "} 
         <time class='text-xs opacity-50'>
-          {new Date(content.timestamp).toLocaleTimeString()}
+          {new Date(content.timestamp).toLocaleTimeString('en-US', { hour12: false })}
         </time>
       </div>
       <div class='chat-bubble'>
-        <Switch fallback={<p>{JSON.stringify(content)} 无法被正确渲染。</p>}>
+        <Switch fallback={<p>{JSON.stringify(content)} Cannot be rendered correctly</p>}>
           <Match when={content.content.type === 'text'}>
             {/*@ts-ignore */}
             <TextMessage content={content.content} />

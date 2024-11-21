@@ -22,34 +22,31 @@ export default function App() {
     <>
       <div class='navbar bg-base-100'>
         <div class='navbar-start'>
-          <a class='btn btn-ghost text-xl'>工单导出查看器</a>
+          <a class='btn btn-ghost text-xl'>Ticket Viewer</a>
         </div>
         <div class='navbar-center hidden lg:flex'>
           <ul class='menu menu-horizontal px-1'>
             <li>
               <a href='https://github.com/Kokoro-js/ticket-bot-viewer'>
-                GitHUB
+                Github
               </a>
             </li>
             <li>
-              <a href='https://kook.top/lZcnhU'>Kook</a>
+              <a href=''>Fantastic Help</a>
             </li>
           </ul>
-        </div>
-        <div class='navbar-end'>
-          <ThemeSelector />
         </div>
       </div>
       <div id='sidebar' class='sidebar bg-base-100'>
         <ul class='menu p-4 pl-0.5 overflow-y-auto w-80 bg-base-100 text-base-content'>
           <li class='pl-0.5'>
-            <a href='#app'>页首</a>
+            <a href='#app'>Index</a>
           </li>
           <li class='pl-0.5'>
-            <a href='#info'>工单信息</a>
+            <a href='#info'>Ticket Info</a>
           </li>
           <li class='pl-0.5'>
-            <a href='#content'>聊天记录</a>
+            <a href='#content'>Chat History</a>
           </li>
         </ul>
       </div>
